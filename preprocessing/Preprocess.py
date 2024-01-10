@@ -299,8 +299,10 @@ class NLP_Preprocessor:
     # 함수 : 숫자는 [number]로 변환 +  + 불용어 제거
     def delete_stopwords(self, context):
 
+        context = re.sub(r'[-=+#/\?:^@*\"※~ㆍ!』‘|>\(\)\[\]`\'…》\”\“\’·]',' ',context)
         context = re.sub(r'ㄱㅊ', '괜찮', context)
         context = re.sub(r'\d+', '[number]', context)
+        context = re.sub(r'S|M|L|XL|XXL|s|m|l|xl|xxl|스몰|미디움|라지|엑스라지|미듐|엑라','[size]',context)
 
         for stopword in my_stopwords:
             context = context.replace(stopword, '')
@@ -309,10 +311,6 @@ class NLP_Preprocessor:
 
     # 함수 : 위 4개의 함수 한번에 실행
     def preprocess(self, context):
-        context = re.sub(r'[-=+#/\?:^@*\"※~ㆍ!』‘|>\(\)\[\]`\'…》\”\“\’·]',' ',context)
-        context = re.sub(r'ㄱㅊ', '괜찮', context)
-        context = re.sub(r'\d+', '[number]', context)
-        context = re.sub(r'S|M|L|XL|XXL|s|m|l|xl|xxl|스몰|미디움|라지|엑스라지|미듐|엑라','[size]',context)
 
         context = self.delete_stopwords(context)
 
