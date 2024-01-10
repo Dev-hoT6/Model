@@ -287,7 +287,14 @@ my_stopwords.extend(['😂',
  '👍',
  '⭐️',
  '✅',
- '&'])
+ '&',
+ '🥦',
+ '🤎',
+ '💛',
+ '🤍',
+ '🫶🏻',
+ '🐻'
+ ])
 
 my_stopwords = list(set(my_stopwords))
 my_stopwords
