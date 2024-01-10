@@ -301,8 +301,6 @@ class NLP_Preprocessor:
 
         context = re.sub(r'[-=+#/\?:^@*\"※~ㆍ!』‘|>\(\)\[\]`\'…》\”\“\’·]',' ',context)
         context = re.sub(r'ㄱㅊ', '괜찮', context)
-        context = re.sub(r'\d+', '[number]', context)
-        context = re.sub(r'S|M|L|XL|XXL|s|m|l|xl|xxl|스몰|미디움|라지|엑스라지|미듐|엑라','[size]',context)
 
         for stopword in my_stopwords:
             context = context.replace(stopword, '')
