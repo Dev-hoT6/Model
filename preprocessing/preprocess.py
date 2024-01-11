@@ -349,7 +349,6 @@ class NLP_Preprocessor:
     # 함수 : HTML 태그를 제거
     def delete_html_tag(self, context):
       preprcessed_text = []
-
       for text in context:
           text = re.sub(r"<[^>]+>\s+(?=<)|<[^>]+>", "", text).strip()
           if text:
