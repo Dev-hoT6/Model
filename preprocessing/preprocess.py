@@ -147,7 +147,7 @@ class NLP_Preprocessor:
 
 # 정제
 
-    # 함수 : ㄱㅊ -> 괜찮
+    # 함수 : 오타 수정
     def delete_welcome(self, context):
         preprocessed_text = []
         for text in context:
@@ -447,7 +447,7 @@ class NLP_Preprocessor:
         context5 = self.repeat_char_normalizer(context4)
         context6 = self.repeated_spacing_normalizer(context5)
         context7 = self.min_max_filter(context6)
-        return pd.Series(context6)
+        return pd.Series(context7)
 
 
 
