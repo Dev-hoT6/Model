@@ -168,7 +168,7 @@ class NLP_Preprocessor:
 
 # 정제
 
-    # 함수 : 오타 수정
+    # 함수 : 오타 수정 (채택)
     def delete_welcome(self, context):
         preprocessed_text = []
         for text in context:
@@ -231,7 +231,7 @@ class NLP_Preprocessor:
 
 
 
-    # 함수 : 불용어 제거
+    # 함수 : 불용어 제거 (채택)
     def delete_stopwords(self, context):
         stopwords =  ['ㄱ',
                       'ㄴ',
@@ -389,7 +389,7 @@ class NLP_Preprocessor:
 
 
 
-    # 함수 : 해시태그(#) 제거
+    # 함수 : 해시태그(#) 제거 (채택)
     def delete_hashtag(self, context):
       preprocessed_text = []
       for text in context:
@@ -400,7 +400,7 @@ class NLP_Preprocessor:
 
 
 
-    # 함수 : 이모티콘 제거
+    # 함수 : 이모티콘 제거 (채택)
     def delete_emoticons(self, context):
       preprocessed_text = []
       for text in context:
@@ -413,18 +413,18 @@ class NLP_Preprocessor:
 
 # 정규화
 
-    # 함수 : 반복 횟수 정규화
+    # 함수 : 반복 횟수 정규화 (채택)
     def repeat_char_normalizer(self, context):
         normalized_text = []
         for text in context:
-            text = repeat_normalize(text, num_repeats=1).strip()
+            text = repeat_normalize(text, num_repeats=2).strip()
             if text:
                 normalized_text.append(text)
         return normalized_text
 
 
 
-    # 함수 : 띄어쓰기 정규화
+    # 함수 : 띄어쓰기 정규화 (채택)
     def repeated_spacing_normalizer(self, context):
         normalized_text = []
         for text in context:
@@ -475,3 +475,5 @@ class NLP_Preprocessor:
     def preprocess_second(self, context):
 
         return context
+
+
