@@ -44,11 +44,11 @@ naver_Completed = naver.Convert_spelling(preprocess_first_Completed)
 
 
 # 갈아끼기
-Fashion_list[index]['review'] = naver_Completed # Index 주의
-Fashion_list[index].to_csv("Preprocessed_Onepiece.csv", index=False) # Index 주의
+Fashion_list[index]['review'] = naver_Completed
+Fashion_list[index].to_csv("Preprocessed_XXX.csv", index=False) # 파일명 주의
 
 
 
 # 검사하기
-Test = pd.read_csv("Preprocessed_Onepiece.csv")
+Test = pd.read_csv("Preprocessed_XXX.csv") # 파일명 주의
 Test['review']
