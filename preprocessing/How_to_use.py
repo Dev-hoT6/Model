@@ -45,6 +45,10 @@ naver_Completed = naver.Convert_spelling(preprocess_first_Completed)
 
 # 갈아끼기
 Fashion_list[index]['review'] = naver_Completed
+
+
+
+# CSV 파일로 내보내기
 Fashion_list[index].to_csv("Preprocessed_XXX.csv", index=False) # 파일명 주의
 
 
