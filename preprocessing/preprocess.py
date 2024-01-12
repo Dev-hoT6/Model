@@ -115,8 +115,7 @@ class Naver:
                 result.append(checked_sentence)
 
             except Exception as e:
-                print(f"다른 에러 발생: {e}")
-                print(f"{i}번째에서 오류가 발생하였고 서버오류라 간주하고. 다시 실행합니다.")
+                print(f"Error: {e}", f"설명 : {i}번째 Index에서 서버 오류가 발생하였습니다. 5초 후, {i+1}번째 Index부터 다시 시작하도록 하겠습니다!")
                 result.append(sentence)
                 time.sleep(5)
                 continue
