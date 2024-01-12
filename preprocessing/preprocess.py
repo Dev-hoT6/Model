@@ -105,6 +105,11 @@ class Naver:
 
         result = []
         for i, sentence in enumerate(sentences):
+
+            if i % 100 == 0:
+                print(f"{i}번째 Index 진행중")
+                time.sleep(1)            
+            
             try:
                 checked_sentence = self.convert_spelling(sentence).checked
                 result.append(checked_sentence)
@@ -115,11 +120,8 @@ class Naver:
                 result.append(sentence)
                 time.sleep(5)
                 continue
-                
-            if i % 100 == 0:
-                print(f"{i}번째 진행 중")
-                time.sleep(1)
 
+        
         return pd.Series(result)
 
 
