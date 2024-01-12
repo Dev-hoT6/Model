@@ -75,6 +75,7 @@ class Naver:
         response_data = response.text[42:-2]
         return passed_time, json.loads(response_data)
 
+# 네이버 맞춤법 검사에 사용할 함수
     def convert_spelling(self, text):
         if isinstance(text, list):
             return [self.convert_spelling(item) for item in text]
@@ -97,10 +98,25 @@ class Naver:
 
 
 
-# V
+# 네이버 맞춤법 검사에 사용할 함수를
+# 우리 조의 Task에 맞는 전처리 방법으로 수정한 함수 
     def Convert_spelling(self, sentences):
         sentences = list(sentences)
-        return pd.Series([self.convert_spelling(sentence).checked for sentence in sentences])
+
+        result = []
+        for i, sentence in enumerate(sentences):
+            try:
+                checked_sentence = self.convert_spelling(sentence).checked
+                result.append(checked_sentence)
+
+            except Exception as e:
+                print(f"다른 에러 발생: {e}")
+                print(f"{i}번째에서 오류가 발생하였고 서버오류라 간주하고. 다시 실행합니다.")
+                result.append(sentence)
+                time.sleep(5)
+                continue
+
+        return pd.Series(result)
 
 
 
