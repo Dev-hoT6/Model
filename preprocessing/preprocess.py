@@ -467,8 +467,8 @@ class NLP_Preprocessor:
         # 정규화
         context5 = self.repeat_char_normalizer(context4)
         context6 = self.repeated_spacing_normalizer(context5)
-        context7 = self.min_max_filter(context6)
-        return pd.Series(context7)
+
+        return pd.Series(context6)
 
 
 
