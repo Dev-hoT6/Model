@@ -447,7 +447,7 @@ class NLP_Preprocessor:
     def min_max_filter(self, context):
         preprocessed_text = []
         for text in context:
-          if 0 < len(text) and len(text) < 250: # 문장 최대, 최소 길이 지정해주기
+          if 0 <= len(text) and len(text) <= 300: # 문장 최대, 최소 길이 지정해주기
             preprocessed_text.append(text)
         return preprocessed_text
 
@@ -466,8 +466,9 @@ class NLP_Preprocessor:
         # 정규화
         context5 = self.repeat_char_normalizer(context4)
         context6 = self.repeated_spacing_normalizer(context5)
+        context7 = self.min_max_filter(context6)
 
-        return pd.Series(context6)
+        return pd.Series(context7)
 
 
 
