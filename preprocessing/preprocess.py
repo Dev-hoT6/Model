@@ -115,6 +115,10 @@ class Naver:
                 result.append(sentence)
                 time.sleep(5)
                 continue
+                
+            if i % 100 == 0:
+                print(f"{i}번째 진행 중")
+                time.sleep(1)
 
         return pd.Series(result)
 
