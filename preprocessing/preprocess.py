@@ -447,8 +447,10 @@ class NLP_Preprocessor:
     def min_max_filter(self, context):
         preprocessed_text = []
         for text in context:
-          if 0 <= len(text) and len(text) <= 300: # 문장 최대, 최소 길이 지정해주기
+          if len(text) <= 300:
             preprocessed_text.append(text)
+          else:
+            preprocessed_text.append('')
         return preprocessed_text
 
 
