@@ -24,7 +24,7 @@ Sport_Top = pd.read_csv("/content/TrainData/List Data/Sport_Top_List.csv")
 
 Fashion_list = [Onepiece, Outer, Pants, Skirt, Top, Sport_Outer, Sport_Pants, Sport_Top]
 
-index = 0 # Index 주의
+index = 0 # Index 주의하기
 review_data = Fashion_list[index]['review']
 
 
@@ -49,10 +49,10 @@ Fashion_list[index]['review'] = naver_Completed
 
 
 # CSV 파일로 내보내기
-Fashion_list[index].to_csv("Preprocessed_XXX.csv", index=False) # 파일명 주의
+Fashion_list[index].to_csv("Preprocessed_XXX.csv", index=False) # 파일명 주의하기
 
 
 
 # 검사하기
-Test = pd.read_csv("Preprocessed_XXX.csv") # 파일명 주의
+Test = pd.read_csv("Preprocessed_XXX.csv") # 파일명 주의하기
 Test['review']
