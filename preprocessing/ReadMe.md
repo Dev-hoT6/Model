@@ -1,4 +1,4 @@
-
+# preprocess.py
 # Review의 Text 데이터 전처리
 
 이 파이썬 코드는 한국어 텍스트 데이터의 자연어 처리를 위한 도구를 제공합니다. 특히, 네이버의 API를 사용하여 맞춤법 및 문법 검사를 하는 클래스와 다양한 전처리 작업을 위한 클래스를 포함하고 있습니다.
@@ -74,3 +74,73 @@ naver_Completed = naver.Convert_spelling(preprocess_first_Completed)
 - Naver 클래스는 네이버 API와 통신하기 위해 인터넷 연결이 필요합니다.
 - 전처리 메서드는 특정 요구 사항에 따라 조정하거나 확장할 수 있습니다.
 
+&emsp;
+
+# How_to_use.py
+# How to use preprocess.py
+
+이 코드는 GitHub에서 데이터를 클론하고, 패션 관련 리뷰 데이터에 대한 전처리를 수행하는 방법을 제공합니다.
+
+## 기능
+
+1. **GitHub 데이터 클론**: 특정 GitHub 저장소에서 데이터를 클론합니다.
+2. **패키지 설치**: 필요한 Python 패키지를 설치합니다.
+3. **데이터 불러오기**: 다양한 카테고리의 패션 리뷰 데이터를 불러옵니다.
+4. **데이터 전처리**: NLP 전처리 및 네이버 맞춤법 검사를 수행합니다.
+5. **CSV 파일로 저장**: 전처리된 데이터를 CSV 파일로 저장합니다.
+
+## 사용 방법
+
+1. **GitHub에서 데이터 클론하기**:
+    - TrainData 및 Model 저장소를 클론합니다.
+
+2. **필요한 패키지 설치하기**:
+    - soynlp 패키지를 설치합니다.
+
+3. **데이터 불러오기**:
+    - 각 카테고리 별로 CSV 파일을 불러옵니다.
+
+4. **데이터 전처리하기**:
+    - `NLP_Preprocessor`와 `Naver` 클래스를 사용하여 데이터를 전처리합니다.
+    - 첫 번째 단계 전처리 후 네이버 맞춤법 검사를 수행합니다.
+
+5. **CSV 파일로 저장하기**:
+    - 전처리된 데이터를 새로운 CSV 파일로 저장합니다.
+
+6. **전처리된 데이터 검사하기**:
+    - 저장된 CSV 파일에서 리뷰 데이터를 확인합니다.
+
+## 예시
+
+```python
+# GitHub 저장소 클론
+!git clone https://{Github_User_Name}:{Github_Token}@github.com/Dev-hoT6/TrainData.git
+!git clone https://{Github_User_Name}:{Github_Token}@github.com/Dev-hoT6/Model.git
+
+# 패키지 설치
+!pip install soynlp
+
+# 데이터 불러오기
+import pandas as pd
+Onepiece = pd.read_csv("/content/TrainData/List Data/Onepiece_List.csv")
+# ... (다른 카테고리 데이터 불러오기 생략)
+
+# 전처리
+from Model.preprocessing.preprocess import NLP_Preprocessor, Naver
+preprocessor = NLP_Preprocessor()
+naver = Naver()
+preprocess_first_Completed = preprocessor.preprocess_first(review_data)
+naver_Completed = naver.Convert_spelling(preprocess_first_Completed)
+
+# 데이터 저장
+Fashion_list[index].to_csv("Preprocessed_XXX.csv", index=False)
+
+# 전처리된 데이터 검사
+Test = pd.read_csv("Preprocessed_XXX.csv")
+print(Test['review'])
+```
+
+## 참고 사항
+
+- GitHub 저장소에서 클론하는 과정에서 `{Github_User_Name}`과 `{Github_Token}`은 사용자의 GitHub 계정 이름과 토큰으로 대체해야 합니다.
+- 전처리 메서드는 프로젝트의 요구에 따라 조정될 수 있습니다.
