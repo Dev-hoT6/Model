@@ -11,14 +11,14 @@
 # 데이터 불러오기
 import pandas as pd
 
-Onepiece = pd.read_csv("/content/TrainData/List Data/Onepiece_List.csv")
-Outer = pd.read_csv("/content/TrainData/List Data/Outer_List.csv")
-Pants = pd.read_csv("/content/TrainData/List Data/Pants_List.csv")
-Skirt = pd.read_csv("/content/TrainData/List Data/Skirt_List.csv")
-Top = pd.read_csv("/content/TrainData/List Data/Top_List.csv")
-Sport_Outer = pd.read_csv("/content/TrainData/List Data/Sport_Outer_List.csv")
-Sport_Pants = pd.read_csv("/content/TrainData/List Data/Sport_Pants_List.csv")
-Sport_Top = pd.read_csv("/content/TrainData/List Data/Sport_Top_List.csv")
+Onepiece = pd.read_csv("/content/TrainData/raw_data/List Data/Onepiece_List.csv")
+Outer = pd.read_csv("/content/TrainData/raw_data/List Data/Outer_List.csv")
+Pants = pd.read_csv("/content/TrainData/raw_data/List Data/Pants_List.csv")
+Skirt = pd.read_csv("/content/TrainData/raw_data/List Data/Skirt_List.csv")
+Top = pd.read_csv("/content/TrainData/raw_data/List Data/Top_List.csv")
+Sport_Outer = pd.read_csv("/content/TrainData/raw_data/List Data/Sport_Outer_List.csv")
+Sport_Pants = pd.read_csv("/content/TrainData/raw_data/List Data/Sport_Pants_List.csv")
+Sport_Top = pd.read_csv("/content/TrainData/raw_data/List Data/Sport_Top_List.csv")
 
 
 
