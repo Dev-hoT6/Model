@@ -140,6 +140,7 @@ Test = pd.read_csv("Preprocessed_XXX.csv")
 print(Test['review'])
 ```
 
+
 ## 참고 사항
 
 - GitHub 저장소에서 클론하는 과정에서 `{Github_User_Name}`과 `{Github_Token}`은 사용자의 GitHub 계정 이름과 토큰으로 대체해야 합니다.
