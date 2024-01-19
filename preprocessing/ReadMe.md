@@ -129,15 +129,15 @@ Onepiece = pd.read_csv("/content/TrainData/List Data/Onepiece_List.csv")
 from Model.preprocessing.preprocess import NLP_Preprocessor, Naver
 preprocessor = NLP_Preprocessor()
 naver = Naver()
-preprocess_first_Completed = preprocessor.preprocess_first(review_data)
+preprocess_first_Completed = preprocessor.preprocess_first(Onepiece['review'])
 naver_Completed = naver.Convert_spelling(preprocess_first_Completed)
 
 # 데이터 저장
-Fashion_list[index].to_csv("Preprocessed_XXX.csv", index=False)
+Onepiece.to_csv("Preprocessed_Onepiece.csv", index=False)
 
 # 전처리된 데이터 검사
-Test = pd.read_csv("Preprocessed_XXX.csv")
-print(Test['review'])
+Preprocessed_Onepiece = pd.read_csv("Preprocessed_Onepiece.csv")
+print(Preprocessed_Onepiece['review'])
 ```
 
 
