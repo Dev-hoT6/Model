@@ -99,7 +99,7 @@ class Naver:
 
 
 # 네이버 맞춤법 검사에 사용할 함수를
-# 우리 조의 Task에 맞는 전처리 방법으로 수정한 함수 
+# HoT6조의 Task에 맞는 전처리 방법으로 수정한 함수 
     def Convert_spelling(self, sentences):
         sentences = list(sentences)
 
@@ -168,7 +168,7 @@ class NLP_Preprocessor:
 
 # 정제
 
-    # 함수 : 오타 수정 (채택)
+    # 함수 : 오타 수정 
     def delete_welcome(self, context):
         preprocessed_text = []
         for text in context:
@@ -231,7 +231,7 @@ class NLP_Preprocessor:
 
 
 
-    # 함수 : 불용어 제거 (채택)
+    # 함수 : 불용어 제거 
     def delete_stopwords(self, context):
         stopwords =  ['ㄱ',
                       'ㄴ',
@@ -389,7 +389,7 @@ class NLP_Preprocessor:
 
 
 
-    # 함수 : 해시태그(#) 제거 (채택)
+    # 함수 : 해시태그(#) 제거 
     def delete_hashtag(self, context):
       preprocessed_text = []
       for text in context:
@@ -400,7 +400,7 @@ class NLP_Preprocessor:
 
 
 
-    # 함수 : 이모티콘 제거 (채택)
+    # 함수 : 이모티콘 제거 
     def delete_emoticons(self, context):
       preprocessed_text = []
       for text in context:
@@ -413,7 +413,7 @@ class NLP_Preprocessor:
 
 # 정규화
 
-    # 함수 : 반복 횟수 정규화 (채택)
+    # 함수 : 반복 횟수 정규화
     def repeat_char_normalizer(self, context):
         normalized_text = []
         for text in context:
@@ -424,7 +424,7 @@ class NLP_Preprocessor:
 
 
 
-    # 함수 : 띄어쓰기 정규화 (채택)
+    # 함수 : 띄어쓰기 정규화
     def repeated_spacing_normalizer(self, context):
         normalized_text = []
         for text in context:
