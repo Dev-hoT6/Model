@@ -15,7 +15,7 @@ from soynlp.normalizer import *
 
 
 # <네이버 맞춤법 검사기>
-# 설명 : 1) 오타 수정, 2) 띄어쓰기 수정
+# 설명 : 1) 맞춤법 교정, 2) 문법 교정
 
 class Naver:
     base_url = 'https://m.search.naver.com/p/csearch/ocontent/util/SpellerProxy'
@@ -75,7 +75,7 @@ class Naver:
         response_data = response.text[42:-2]
         return passed_time, json.loads(response_data)
 
-# 네이버 맞춤법 검사에 사용할 함수
+# 함수 : 네이버 맞춤법 검사 수행 (문장 단위)
     def convert_spelling(self, text):
         if isinstance(text, list):
             return [self.convert_spelling(item) for item in text]
@@ -98,8 +98,8 @@ class Naver:
 
 
 
-# 네이버 맞춤법 검사에 사용할 함수를
-# HoT6조의 Task에 맞는 전처리 방법으로 수정한 함수 
+# 함수 : 네이버 맞춤법 검사 수행 (pd.Series 단위)
+# 설명 : convert_spelling를 HoT6조의 Task에 맞게 수정
     def Convert_spelling(self, sentences):
         sentences = list(sentences)
 
@@ -163,6 +163,8 @@ class Naver:
         return words_dict
 
 
+# <HoT6의 전처리 클래스>
+# 설명 : 1) 정제, 2) 정규화
 
 class NLP_Preprocessor:
 
@@ -457,7 +459,7 @@ class NLP_Preprocessor:
 
 # 전처리 함수
 
-    # 함수 : 첫번째 전처리
+    # 함수 : 첫번째 커스터마이징 전처리
     def preprocess_first(self, context):
         context = list(context)
         # 정제
@@ -474,7 +476,7 @@ class NLP_Preprocessor:
 
 
 
-    # 함수 : 두번째 전처리
+    # 함수 : 두번째 커스터마이징 전처리
     def preprocess_second(self, context):
 
         return context
