@@ -1,4 +1,4 @@
-Train folder
+**Train folder**
 * Image folder에는 다음과 같은 코드를 가짐
   * YOLOv8 모델을 사용하여 옷 카테고리 및 사람 인식하는 모델 코드
   * YOLOv8 모델을 ONNX로 변환하는 코드
@@ -7,7 +7,7 @@ Train folder
   * Classifier 모델을 사용하여 리뷰의 품질을 판단하는 모델의 코드
   * Classifier 모델을 ONNX로 변환하는 코드
 
-preprocessing folder
+**preprocessing folder**
 * 데이터 전처리에 관련된 코드를 가짐
 ![image](https://github.com/Dev-hoT6/Model/assets/97217295/99a58095-7a79-4a84-905b-b54847ccd88b)
 <br>
