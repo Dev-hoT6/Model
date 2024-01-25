@@ -130,10 +130,15 @@ Onepiece = pd.read_csv("/content/TrainData/List Data/Onepiece_List.csv")
 
 # 전처리
 from Model.preprocessing.preprocess import NLP_Preprocessor, Naver
+
 preprocessor = NLP_Preprocessor()
 naver = Naver()
+
 preprocess_first_Completed = preprocessor.preprocess_first(Onepiece['review'])
 naver_Completed = naver.Convert_spelling(preprocess_first_Completed)
+
+# 갈아끼기
+Onepiece['review'] = naver_Completed
 
 # 데이터 저장
 Onepiece.to_csv("Preprocessed_Onepiece.csv", index=False)
