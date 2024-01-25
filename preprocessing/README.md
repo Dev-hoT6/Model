@@ -63,10 +63,10 @@ naver = Naver()
 # 샘플 리뷰의 텍스트 데이터 (데이터 타입 : pd.Series)
 review_text_data = DataFrame['review']
 
-# 텍스트 전처리
+# 1차 : 텍스트 전처리 클래스
 preprocess_first_Completed = preprocessor.preprocess_first(review_text_data)
 
-# Naver 클래스를 사용하여 맞춤법 검사
+# 2차 : Naver 클래스
 naver_Completed = naver.Convert_spelling(preprocess_first_Completed)
 
 
